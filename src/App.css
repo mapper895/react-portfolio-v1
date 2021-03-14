@@ -2,17 +2,22 @@
 
 :root {
   --primary-white: #fff;
-  --primary-orange: #f9ab00;
+  --primary-pink: #df1d84;
   --primary-dark: rgba(255, 255, 255, 0);
 }
 
 body {
   font-family: "Roboto Condensed", sans-serif;
 }
+a {
+  text-decoration: none;
+  color: white;
+}
 
 /* NAVBAR */
 .navbar {
   min-height: 10vh;
+  z-index: 2;
 }
 .logo {
   height: 6vh;
@@ -43,9 +48,94 @@ nav ul li {
 
 .navbar-nav > li > a.active,
 .navbar-nav > li > a.active:focus {
-  border-top: 0.1875rem solid var(--primary-orange);
+  border-top: 0.1875rem solid var(--primary-pink);
 }
 
 .navbar-nav > li > a:hover {
   border-top: 0.1875rem solid var(--primary-orange);
+}
+
+/* HEADER */
+.header-wrapper {
+  position: relative;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.7)),
+    url(./img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 90vh;
+}
+
+.main-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.main-info h1 {
+  color: rgb(230, 230, 230);
+  text-transform: uppercase;
+  padding-top: 2rem;
+  font-size: 3rem;
+}
+
+/* TYPED TEXT */
+.typed-text {
+  font-size: 2rem;
+  color: #fff;
+}
+
+/* HEADER MAIN OFFER BUTTON */
+.btn-main-offer {
+  border: none;
+  text-transform: uppercase;
+  border-radius: 0.6rem;
+  padding: 1rem 4rem;
+  color: #b40693;
+  background: #fff;
+  margin-top: 6rem;
+  font-weight: 600;
+  font-size: 1.2rem;
+  z-index: 999;
+}
+.btn-main-offer:hover {
+  color: #fff;
+  background: #b40693;
+  text-decoration: none;
+  transition: all 200ms ease-in-out;
+}
+
+/* PARTICLES */
+.tsparticles-canvas-el {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  z-index: 1;
+}
+
+@media screen and (max-width: 760px) {
+  .particles {
+    display: none;
+  }
+  .main-info h1 {
+    font-size: 1.8rem !important;
+    padding: 3rem 1rem;
+  }
+  .typed-text {
+    font-size: 1.4rem;
+    color: #fff;
+  }
+  .btn-main-offer {
+    padding: 0.6rem 3rem;
+    margin-top: 4rem;
+    font-size: 0.8rem;
+  }
 }
